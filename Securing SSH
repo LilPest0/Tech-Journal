@@ -1,0 +1,5 @@
+This is how I secured root in CentOS by preventing login:
+1. I edited the /etc/ssh/sshd_config file in nano 
+2. I uncommented the PermitRootLogin yes file
+3. I changed "yes" to "no"
+4. Then I saved the file and restarted the sshd service
