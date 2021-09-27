@@ -1,0 +1,7 @@
+How to create groups:
+  - switch to root
+  - 'groupadd groupname'
+  - add members with 'usermod -aG group user'
+  
+Adjusting Permissions:
+  - use the 'chmod' command with a-w & a-o values to change user's permissions with files.
