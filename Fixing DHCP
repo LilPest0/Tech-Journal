@@ -1,0 +1,4 @@
+To fix the DHCP:
+  1 I went to AD02 and installed "DHCP server" on FS01, and configured it accordingly (with the valid ip range)
+  2 From AD02, I installed "DCHP Management Tools" onto AD02, allowing me to manage FS from there
+  3 I ran the commands needed to complete the lab
