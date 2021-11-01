@@ -1,0 +1,9 @@
+In the Apache Lab, I joined a new CentOS machine to my domain. Here's how:
+
+1 Configured connections, hostname and the ip of the new machine
+2 Set it up so that I could SSH into it
+3 Joined it to the domain by creating a FLZ & RLZ
+4 Used it to add TCP ports 80 & 443 to my firewall
+Joined WEB01 to the realm, and succesfully added it to my network
+
+Kinda proud of this one. Went a whole lab w/o royally screwing myself over!
