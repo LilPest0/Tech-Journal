@@ -1,0 +1,4 @@
+Using yum, I installed httpd 
+I added TCP ports 80 & 443 to the firewall
+Installed PHP to make an HTML script for web01
+Learned how to configure httpd, and used it in completing the WEB01 setup.
