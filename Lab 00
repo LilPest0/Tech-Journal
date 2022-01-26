@@ -1,0 +1,21 @@
+This was the first lab of the semester, so we basically had to set up all our old vms pretty much as they were before, only with a few changes. The goal was simple - 
+reconstruct our virtual enviornments. 
+
+I knew pretty well what the usual drill was for deploying a new box - set network adapter, ip, dns etc. 
+First I set up the firewall. I gave it 2 network adapters- one for the sys265 WAN, and the second for my personal LAN
+Next I added wks01 to the LAN, and connected it to the firewall so I could manage pfSense from there.
+After that, I set up ad01 and installed AD on it, then the Forest. Then I logged in as the domain admin.
+Finally, I set up MGMT01, a windows server with a GUI. It was meant to manage "any server core systems"
+  -added it to the lan
+  -configured the hostname
+  -joined it to the domain
+  -logged in to the domain
+  -installed needed features
+  -added it as a server
+  -made domain users, including an adm account
+  -added dns records for each box on the network
+
+And then, of course I had to connect wks01 to the domain. It wasn't too complicated of a lab, but I'm expecting them to only get more complex as the semester goes on
+
+But I'll be ready. I actually know what th is going on now.
+- Benji
