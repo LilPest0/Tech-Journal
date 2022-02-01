@@ -1,0 +1,11 @@
+In this activity, I used my pfSense firewall to configure it as a DHCP server for my subnet. 
+
+I started by logging into the server using Chrome on wks01. 
+The next step was to navigate to the services tab, then to "dhcp server"
+Then I configured the following settings:
+- enabled dhcp server on lan interface
+- set ip range from .150 - .175
+- added 10.0.5.5 (mgmt01) as a dns server
+- set 10.0.5.2 as the default gateway
+
+Finally, I backtracked to the internet adapter settings on wks01, and enabled dhcp. Then i executed ipconfig /all to confirm that it was on and working
