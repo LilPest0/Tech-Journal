@@ -1,0 +1,7 @@
+In this lab, we were tasked with setting up snmp on our networks. SNMP is not something I was familiar with, so I had to research a bit.
+
+Topic 1: SNMP is Simple Network Management Protocol. It collects and organizes information about devices on IP networks, and is widely used for network monitoring.
+Topic 2: SNMPD is a Unix agent that monitors ports for SNMP requests, which it then processes and executes the requested operation.
+Topic 3: TCPDump is a tool for examining network traffic, much like network mapping utilities such as Wireshark. It captures packets and pisplays their information on the screen.
+
+I learned a lot from this lab, even though it wasn't easy. But now SNMP is configured on my enviornment, and I'm ready for the next lab.
