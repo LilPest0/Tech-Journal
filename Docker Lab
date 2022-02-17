@@ -1,0 +1,20 @@
+This was one of the harder labs I've had to do so far this semester.
+To begin with, I was given a new Ubuntu box that had to be networked differently than our other devices. 
+
+Figuring this out was probably the hardest part of the lab.
+To connect it to the DNS, I had to go into a new file called resolv.conf, and update the "nameserver" value. Notably, it worked in nano but not in vim.
+
+The next step was to install docker. The installation was pretty easy and intuitive, especially since we were provided an article on how to do it. 
+Then I had to confirm that my named sudo account could access Docker by joining it to the Docker group. 
+
+After this, I did the Docker hello world, which demonstrated that docker can find packages, download and executed them as needed. This meant that it was up and running successfully.
+
+Next I set up docker-compose, a tool allowing you to run multi-container application enviornments. After this i was able to figure out how to pull basic web applications with it.
+Then I accessed the docker01-benji through a web browser, to view a webpage that I was hosting off of it. It was starting to come together!
+
+The final step was to get wordpress working through docker to make a more intricate page. Here I had to configure a strangely delicate file called docker-compose.yml, which
+was configuration stuff for the wordpress. Once I got the spaces for indentations right, I was able to type it out and get it working.
+
+Notes:
+- I configured docker01-benji so that you couldnt ssh in as root. That way it adds another layer of security. I just had to make sure later on to add "benji" to the docker group.
+- docker commands are pretty easy. Run, ps, and stop were the most frequently used.
