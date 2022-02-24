@@ -1,0 +1,13 @@
+another strenuous and complex lab. but who am i to be suprised?
+
+i had to install git on docker, and then pull my techjournal repo into docker01. then i made a directory structure to keep everything organized. 
+after taht , i learned how to add, commit and push files via cli, which was pretty cool. notably, i had to put in my github username and email for this.
+  another note: passwords were disabled for github, (not sure why) so I had to use a private access token instead. it was a very long string of numbers and letters
+
+after that i had to install git-bash on mgmt, and then once again clone the repository. i figured out how to do all the same stuff over here
+
+in the second part of the lab, i once again cloned the tech journal, but this time to web01. i had to install git on it, which i just did with yum. i wrote an executable
+.sh script which i pushed to github. then, still on web01, i made an rsa keypair and copied the public one to the local repo.
+
+the rest of the lab involved securing things and hardening the ssh. i tested the passwordless login, but for some reason i couldnt get it to work and my brain was far too fried
+to find a solution. however, the .sh file successfully executed when i pulled it into docker
