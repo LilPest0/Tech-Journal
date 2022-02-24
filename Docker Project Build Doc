@@ -1,0 +1,6 @@
+1. To start, I watched the video that was posted on Canvas and observed what he was doing. This cleared up a lot of my confusion, but I still wonder why SYS260 professors use Harry Potter names for all their usernames? Beats me.
+2. I went to hub.docker.com to look for images that I could pull and run for my own project. I wanted to go with something simple, so I chose Couchbase, which is a basic storage utility often used in clouds. (https://hub.docker.com/_/couchbase) From here I could just follow the instructions provided.
+3. Going into the docker01, I executed "docker run -d --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase" as instructed.
+4. I visited http://docker01-benji:8091 on mgmt01, where I followed the setup wizard for Couchbase, accepting all the defaults. 
+5. Now it was time to set up the new cluster. I gave it a name and an admin user, and after that I was able to see the dashboard. I enabled the beer-sample bucket to load in some sample data so I could ensure it was working properly.
+6. Done! Finally I just poked around inside to see what I could find, and to get a better sense of Couchbase.
