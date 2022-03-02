@@ -1,0 +1,36 @@
+
+Started with 3 new boxes, controller (ubuntu), ansible1(centos) and ansible2(rocky), and set them up as usual (hostname, DNS, etc)
+On each machine, I created a user called deployer. The one on controller was sudo, as well as benji.
+Configured ssh on each, then I sshed into controller-benji from mgmt. I elevated to root, and installed ansible using "sudo apt install ansible sshpass python3-paramiko"
+On all 3 systems, I made /etc/sudoers.d/sys265 with nano, with one line "deployer ALL=(ALL) NOPASSWD: ALL
+Now on deployer@controller, I made the RSA keypair using ssh-keygen. I scped it over to ansible 1 & 2, then sshed into both of them to verify that it worked.
+Now it was time to set up roles. i ran "mkdir -p ansible/roles" to serve as the directory, 
+then made the inventory file with "echo ansible1-benji >> inventory.txt" and the same with ansible2. 
+Then I verified it was functioning with "ansible all -m ping -i inventory.txt
+Now i updated by inventory to catigorize hosts by type. This was as easy as editing the .txt file itself:
+  ansible1-benji
+  [webmin
+  ansible2-benji
+Next I set up Ansible Galaxy, which has a lot of Ansible scripts in it. "ansible-galaxy install semuadmin.webmin -p roles/"
+Now I made a playbook called "roles/webmin.yml" and executed it. this contained config options for my systems
+From the web browser on mgmt01, i logged into webmin by browsing to ansible2-benji.benji.local:10000. Pretty cool to see how i can manage everything from here.
+Browsing to galaxy.ansible.com, I deployed another role called ROLENAMEHERE to ansible1.
+
+MGMT01 ANSIBLE
+In the next part of the lab, i set up mgmt01 for ansible. i enabled and started openssh, and set powershell to be the default ssh shell:
+Set-ItemProperty "HKLM:\Software\Microsoft\Powershell\1\ShellIds" -Name ConsolePrompting -Value $true
+New-ItemProperty -Path HKLM:\SOFTWARE\OpenSSH -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
+Now from controller, i sshed into mgmt01 the inventory file now looked like this:
+  ROLENAMEHERE
+  ansible1-benji
+  [webmin
+  ansible2-benji
+  mgmt1-benji
+  [windows]
+  mgmt01-benji
+  wks01-benji
+  [windows:vars]
+  ansible_shell_type=powershell
+
+CHOCOLATEY
+Back in the roles directory on controller, I made a new playbook called windows_software.yml and ran "ansible-playbook -i inventory.txt roles/windows_software.yml -u benji.gifford-admn@benji.local --ask-pass" 
