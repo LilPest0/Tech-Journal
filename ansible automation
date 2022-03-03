@@ -14,16 +14,16 @@ Now i updated by inventory to catigorize hosts by type. This was as easy as edit
 Next I set up Ansible Galaxy, which has a lot of Ansible scripts in it. "ansible-galaxy install semuadmin.webmin -p roles/"
 Now I made a playbook called "roles/webmin.yml" and executed it. this contained config options for my systems
 From the web browser on mgmt01, i logged into webmin by browsing to ansible2-benji.benji.local:10000. Pretty cool to see how i can manage everything from here.
-Browsing to galaxy.ansible.com, I deployed another role called ROLENAMEHERE to ansible1.
+Browsing to galaxy.ansible.com, I deployed another role called devsec.hardening to ansible1.
 
 MGMT01 ANSIBLE
 In the next part of the lab, i set up mgmt01 for ansible. i enabled and started openssh, and set powershell to be the default ssh shell:
 Set-ItemProperty "HKLM:\Software\Microsoft\Powershell\1\ShellIds" -Name ConsolePrompting -Value $true
 New-ItemProperty -Path HKLM:\SOFTWARE\OpenSSH -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
 Now from controller, i sshed into mgmt01 the inventory file now looked like this:
-  ROLENAMEHERE
+  [centos7]
   ansible1-benji
-  [webmin
+  [webmin]
   ansible2-benji
   mgmt1-benji
   [windows]
