@@ -9,12 +9,12 @@ then made the inventory file with "echo ansible1-benji >> inventory.txt" and the
 Then I verified it was functioning with "ansible all -m ping -i inventory.txt
 Now i updated by inventory to catigorize hosts by type. This was as easy as editing the .txt file itself:
   ansible1-benji
-  [webmin
+  [webmin]
   ansible2-benji
 Next I set up Ansible Galaxy, which has a lot of Ansible scripts in it. "ansible-galaxy install semuadmin.webmin -p roles/"
 Now I made a playbook called "roles/webmin.yml" and executed it. this contained config options for my systems
 From the web browser on mgmt01, i logged into webmin by browsing to ansible2-benji.benji.local:10000. Pretty cool to see how i can manage everything from here.
-Browsing to galaxy.ansible.com, I deployed another role called devsec.hardening to ansible1.
+Browsing to galaxy.ansible.com, I deployed another role called frogyyen.centos7-wordpress to ansible1.
 
 MGMT01 ANSIBLE
 In the next part of the lab, i set up mgmt01 for ansible. i enabled and started openssh, and set powershell to be the default ssh shell:
