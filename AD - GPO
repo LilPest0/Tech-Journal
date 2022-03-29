@@ -1,0 +1,16 @@
+Creating an OU via Powershell
+- can be done using the command "new-adorganizationalunit "Software Deploy""
+
+Deleting an OU via Powershell
+- can be done using the command "Remove-ADOrganizationalUnit -Identity "OU=TestOU""
+- I ran into an issue where I had an option selected in the OU's properties to protect it from accidental deletion.
+- I was able to bypass this by:
+  going into the Active Directory Administrative Center in Windows Server Manager on MGMT01
+  select OU > Properties > Uncheck the "Protect from accidental deletion" box & click OK
+ 
+Moving items from one OU to another is as easy as dragging them from place to place in GUI. 
+I just clicked and dragged like usual on windows
+
+Searching the Event Log using Powershell
+- can be done using the command "get-eventlog"
+- I used "get-eventlog -logname System -newest 15" to show the 15 newest logs. Here I found the one for the PuTTY installation.
